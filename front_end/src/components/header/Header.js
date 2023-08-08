@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faVideoSlash } from "@fortawesome/free-solid-svg-icons";
+import { faUnderline, faVideoSlash } from "@fortawesome/free-solid-svg-icons";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -174,7 +174,7 @@ export const Header = ({registerData, setRegisterData, loginData, setLoginData }
               Watch List
             </NavLink>
           </Nav>
-          {isLogin ? ( 
+          {isLogin&& Cookies.get('user_name')!==undefined ? ( 
             <Nav>
               <NavDropdown title={Cookies.get('user_name')} id="basic-nav-dropdown">
                 <NavDropdown.Item onClick={handleViewOrderedSeats}>View OrderedSeat</NavDropdown.Item>

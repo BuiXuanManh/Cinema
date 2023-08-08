@@ -30,6 +30,9 @@ const Views = ({ getMovieData, movie, setMovie, reviews, setReviews, setSaveMovi
         if (saveMovies?.some((pmovie) => pmovie?.imdbId === movie?.imdbId)) {
             handleSetNone();
         }
+        else{
+            handleSetBlock();
+        }
     }, [movie]);
     const handleSaveMovies = (movie) => {
         setSaveMovies((prevMovies) => {
